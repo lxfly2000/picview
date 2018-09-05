@@ -77,6 +77,7 @@ namespace picview
             }
             catch(Exception e)
             {
+                pictureBoxMain.Image = null;
                 Text = String.Format("{0} ({1})", path, e.Message);
             }
         }
