@@ -190,5 +190,18 @@ namespace picview
                 return false;
             return base.ProcessDialogKey(keyData);
         }
+
+        private void pictureBoxMain_DoubleClick(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Maximized)
+            {
+                WindowState = FormWindowState.Normal;
+                WindowFitImage();
+            }
+            else
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+        }
     }
 }
