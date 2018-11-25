@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace picview
@@ -187,6 +181,14 @@ namespace picview
         private void colorWhiteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangeBackgroundColor(Color.White);
+        }
+
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            //参考：https://blog.csdn.net/genganpeng/article/details/8649191
+            if (keyData == Keys.Left || keyData == Keys.Right)
+                return false;
+            return base.ProcessDialogKey(keyData);
         }
     }
 }
