@@ -203,5 +203,23 @@ namespace picview
                 WindowState = FormWindowState.Maximized;
             }
         }
+
+        private void RotateImage(bool toRight)
+        {
+            if (pictureBoxMain.Image == null)
+                return;
+            pictureBoxMain.Image.RotateFlip(toRight ? RotateFlipType.Rotate90FlipNone : RotateFlipType.Rotate270FlipNone);
+            pictureBoxMain.Invalidate();
+        }
+
+        private void rotateRightToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RotateImage(true);
+        }
+
+        private void rotateLeftToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RotateImage(false);
+        }
     }
 }
