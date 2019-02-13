@@ -31,14 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.pictureBoxMain = new System.Windows.Forms.PictureBox();
             this.contextMenuMain = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rotateRightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rotateLeftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fitImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.useSystemDPIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeBackgroundColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorBlackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorWhiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colorCustomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.topmostToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonToPrevious = new System.Windows.Forms.Button();
             this.buttonToNext = new System.Windows.Forms.Button();
@@ -46,6 +47,7 @@
             this.toolTipToPrevious = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipToNext = new System.Windows.Forms.ToolTip(this.components);
             this.openFileDialogImagePath = new System.Windows.Forms.OpenFileDialog();
+            this.colorDialogBackground = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             this.contextMenuMain.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +79,13 @@
             this.contextMenuMain.Name = "contextMenuMain";
             this.contextMenuMain.Size = new System.Drawing.Size(440, 381);
             // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(439, 46);
+            this.openToolStripMenuItem.Text = "打开(&O)";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
             // rotateRightToolStripMenuItem
             // 
             this.rotateRightToolStripMenuItem.Name = "rotateRightToolStripMenuItem";
@@ -107,18 +116,12 @@
             this.useSystemDPIToolStripMenuItem.Text = "调整时使用系统&DPI[{0}%]";
             this.useSystemDPIToolStripMenuItem.Click += new System.EventHandler(this.useSystemDPIToolStripMenuItem_Click);
             // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(439, 46);
-            this.openToolStripMenuItem.Text = "打开(&O)";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
-            // 
             // changeBackgroundColorToolStripMenuItem
             // 
             this.changeBackgroundColorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.colorBlackToolStripMenuItem,
-            this.colorWhiteToolStripMenuItem});
+            this.colorWhiteToolStripMenuItem,
+            this.colorCustomToolStripMenuItem});
             this.changeBackgroundColorToolStripMenuItem.Name = "changeBackgroundColorToolStripMenuItem";
             this.changeBackgroundColorToolStripMenuItem.Size = new System.Drawing.Size(439, 46);
             this.changeBackgroundColorToolStripMenuItem.Text = "背景色(&C)";
@@ -126,16 +129,23 @@
             // colorBlackToolStripMenuItem
             // 
             this.colorBlackToolStripMenuItem.Name = "colorBlackToolStripMenuItem";
-            this.colorBlackToolStripMenuItem.Size = new System.Drawing.Size(396, 46);
+            this.colorBlackToolStripMenuItem.Size = new System.Drawing.Size(429, 46);
             this.colorBlackToolStripMenuItem.Text = "黑色(&B)";
             this.colorBlackToolStripMenuItem.Click += new System.EventHandler(this.colorBlackToolStripMenuItem_Click);
             // 
             // colorWhiteToolStripMenuItem
             // 
             this.colorWhiteToolStripMenuItem.Name = "colorWhiteToolStripMenuItem";
-            this.colorWhiteToolStripMenuItem.Size = new System.Drawing.Size(396, 46);
+            this.colorWhiteToolStripMenuItem.Size = new System.Drawing.Size(429, 46);
             this.colorWhiteToolStripMenuItem.Text = "白色(&W)";
             this.colorWhiteToolStripMenuItem.Click += new System.EventHandler(this.colorWhiteToolStripMenuItem_Click);
+            // 
+            // colorCustomToolStripMenuItem
+            // 
+            this.colorCustomToolStripMenuItem.Name = "colorCustomToolStripMenuItem";
+            this.colorCustomToolStripMenuItem.Size = new System.Drawing.Size(429, 46);
+            this.colorCustomToolStripMenuItem.Text = "自定义({0},{1},{2})(&C)...";
+            this.colorCustomToolStripMenuItem.Click += new System.EventHandler(this.colorCustomToolStripMenuItem_Click);
             // 
             // topmostToolStripMenuItem
             // 
@@ -232,6 +242,8 @@
         private System.Windows.Forms.ToolStripMenuItem colorWhiteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rotateRightToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rotateLeftToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem colorCustomToolStripMenuItem;
+        private System.Windows.Forms.ColorDialog colorDialogBackground;
     }
 }
 

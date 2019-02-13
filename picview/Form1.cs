@@ -9,6 +9,7 @@ namespace picview
     public partial class FormPicView : Form
     {
         float dpi_zoom;
+        string menuCustomColorText;
 
         public FormPicView()
         {
@@ -17,6 +18,7 @@ namespace picview
             Graphics testGraphic = CreateGraphics();
             dpi_zoom = Math.Min(testGraphic.DpiX / 96.0f, testGraphic.DpiY / 96.0f);
             testGraphic.Dispose();
+            menuCustomColorText = colorCustomToolStripMenuItem.Text;
             ChangeBackgroundColor(Color.White);
             useSystemDPIToolStripMenuItem.Text = String.Format(useSystemDPIToolStripMenuItem.Text, dpi_zoom * 100);
             if (Environment.GetCommandLineArgs().Length > 1)
@@ -170,7 +172,9 @@ namespace picview
         {
             colorBlackToolStripMenuItem.Checked = c == Color.Black;
             colorWhiteToolStripMenuItem.Checked = c == Color.White;
+            colorCustomToolStripMenuItem.Checked = (c != Color.Black && c != Color.White);
             pictureBoxMain.BackColor = c;
+            colorCustomToolStripMenuItem.Text = String.Format(menuCustomColorText, c.R, c.G, c.B);
         }
 
         private void colorBlackToolStripMenuItem_Click(object sender, EventArgs e)
@@ -220,6 +224,13 @@ namespace picview
         private void rotateLeftToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RotateImage(false);
+        }
+
+        private void colorCustomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            colorDialogBackground.Color = pictureBoxMain.BackColor;
+            if (colorDialogBackground.ShowDialog() == DialogResult.OK)
+                ChangeBackgroundColor(colorDialogBackground.Color);
         }
     }
 }
