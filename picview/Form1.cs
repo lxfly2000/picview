@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -231,6 +232,12 @@ namespace picview
             colorDialogBackground.Color = pictureBoxMain.BackColor;
             if (colorDialogBackground.ShowDialog() == DialogResult.OK)
                 ChangeBackgroundColor(colorDialogBackground.Color);
+        }
+
+        private void openInExplorerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(imagePath))
+                Process.Start("explorer", "/select,\"" + imagePath + "\"");
         }
     }
 }
