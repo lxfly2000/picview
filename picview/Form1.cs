@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -112,17 +113,30 @@ namespace picview
 
         Regex imageReg = new Regex("^.*\\.(bmp|dib|jp.+|jfif|png|gif|tif.*)$");
 
+        public class FileNameSorter : IComparer
+        {
+            [System.Runtime.InteropServices.DllImport("Shlwapi.dll", CharSet = System.Runtime.InteropServices.CharSet.Unicode)]
+            private static extern int StrCmpLogicalW(string s1, string s2);
+            public int Compare(object o1,object o2)
+            {
+                return StrCmpLogicalW(o1.ToString(), o2.ToString());
+            }
+        }
+
         void NavigateImageSource(bool toRight)
         {
             if (imagePath == null)
                 return;
             FileInfo fileInfo = new FileInfo(imagePath);
             DirectoryInfo dir = fileInfo.Directory;
+            FileInfo[] fileList = dir.GetFiles();
+            if (useSystemSortToolStripMenuItem.Checked)
+                Array.Sort(fileList, new FileNameSorter());
             int index = -1;
-            int attempts = dir.GetFiles().Length;
+            int attempts = fileList.Length;
             for(int i=0;i<attempts;i++)
             {
-                if(dir.GetFiles()[i].FullName==fileInfo.FullName)
+                if(fileList[i].FullName==fileInfo.FullName)
                 {
                     index = i;
                     break;
@@ -134,12 +148,12 @@ namespace picview
             {
                 attempts--;
                 if (toRight)
-                    index = (index + 1) % dir.GetFiles().Length;
+                    index = (index + 1) % fileList.Length;
                 else
-                    index = (index + dir.GetFiles().Length - 1) % dir.GetFiles().Length;
-                if (imageReg.Match(dir.GetFiles()[index].FullName.ToLower()).Success)
+                    index = (index + fileList.Length - 1) % fileList.Length;
+                if (imageReg.Match(fileList[index].FullName.ToLower()).Success)
                 {
-                    SetImageSource(dir.GetFiles()[index].FullName);
+                    SetImageSource(fileList[index].FullName);
                     break;
                 }
             }

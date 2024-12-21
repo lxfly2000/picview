@@ -49,6 +49,7 @@
             this.toolTipToNext = new System.Windows.Forms.ToolTip(this.components);
             this.openFileDialogImagePath = new System.Windows.Forms.OpenFileDialog();
             this.colorDialogBackground = new System.Windows.Forms.ColorDialog();
+            this.useSystemSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             this.contextMenuMain.SuspendLayout();
             this.SuspendLayout();
@@ -58,9 +59,9 @@
             this.pictureBoxMain.ContextMenuStrip = this.contextMenuMain;
             this.pictureBoxMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxMain.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxMain.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxMain.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.pictureBoxMain.Name = "pictureBoxMain";
-            this.pictureBoxMain.Size = new System.Drawing.Size(800, 450);
+            this.pictureBoxMain.Size = new System.Drawing.Size(320, 180);
             this.pictureBoxMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxMain.TabIndex = 0;
             this.pictureBoxMain.TabStop = false;
@@ -76,43 +77,44 @@
             this.rotateLeftToolStripMenuItem,
             this.fitImageToolStripMenuItem,
             this.useSystemDPIToolStripMenuItem,
+            this.useSystemSortToolStripMenuItem,
             this.changeBackgroundColorToolStripMenuItem,
             this.topmostToolStripMenuItem});
             this.contextMenuMain.Name = "contextMenuMain";
-            this.contextMenuMain.Size = new System.Drawing.Size(440, 443);
+            this.contextMenuMain.Size = new System.Drawing.Size(215, 224);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(439, 48);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.openToolStripMenuItem.Text = "打开(&O)";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // openInExplorerToolStripMenuItem
             // 
             this.openInExplorerToolStripMenuItem.Name = "openInExplorerToolStripMenuItem";
-            this.openInExplorerToolStripMenuItem.Size = new System.Drawing.Size(439, 48);
+            this.openInExplorerToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.openInExplorerToolStripMenuItem.Text = "在资源管理器中打开(&E)";
             this.openInExplorerToolStripMenuItem.Click += new System.EventHandler(this.openInExplorerToolStripMenuItem_Click);
             // 
             // rotateRightToolStripMenuItem
             // 
             this.rotateRightToolStripMenuItem.Name = "rotateRightToolStripMenuItem";
-            this.rotateRightToolStripMenuItem.Size = new System.Drawing.Size(439, 48);
+            this.rotateRightToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.rotateRightToolStripMenuItem.Text = "顺时针旋转90°(&R)";
             this.rotateRightToolStripMenuItem.Click += new System.EventHandler(this.rotateRightToolStripMenuItem_Click);
             // 
             // rotateLeftToolStripMenuItem
             // 
             this.rotateLeftToolStripMenuItem.Name = "rotateLeftToolStripMenuItem";
-            this.rotateLeftToolStripMenuItem.Size = new System.Drawing.Size(439, 48);
+            this.rotateLeftToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.rotateLeftToolStripMenuItem.Text = "逆时针旋转90°(&L)";
             this.rotateLeftToolStripMenuItem.Click += new System.EventHandler(this.rotateLeftToolStripMenuItem_Click);
             // 
             // fitImageToolStripMenuItem
             // 
             this.fitImageToolStripMenuItem.Name = "fitImageToolStripMenuItem";
-            this.fitImageToolStripMenuItem.Size = new System.Drawing.Size(439, 48);
+            this.fitImageToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.fitImageToolStripMenuItem.Text = "调整窗口为图片大小(&F)";
             this.fitImageToolStripMenuItem.Click += new System.EventHandler(this.fitImageToolStripMenuItem_Click);
             // 
@@ -121,7 +123,7 @@
             this.useSystemDPIToolStripMenuItem.Checked = true;
             this.useSystemDPIToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.useSystemDPIToolStripMenuItem.Name = "useSystemDPIToolStripMenuItem";
-            this.useSystemDPIToolStripMenuItem.Size = new System.Drawing.Size(439, 48);
+            this.useSystemDPIToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.useSystemDPIToolStripMenuItem.Text = "调整时使用系统&DPI[{0}%]";
             this.useSystemDPIToolStripMenuItem.Click += new System.EventHandler(this.useSystemDPIToolStripMenuItem_Click);
             // 
@@ -132,34 +134,34 @@
             this.colorWhiteToolStripMenuItem,
             this.colorCustomToolStripMenuItem});
             this.changeBackgroundColorToolStripMenuItem.Name = "changeBackgroundColorToolStripMenuItem";
-            this.changeBackgroundColorToolStripMenuItem.Size = new System.Drawing.Size(439, 48);
+            this.changeBackgroundColorToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.changeBackgroundColorToolStripMenuItem.Text = "背景色(&C)";
             // 
             // colorBlackToolStripMenuItem
             // 
             this.colorBlackToolStripMenuItem.Name = "colorBlackToolStripMenuItem";
-            this.colorBlackToolStripMenuItem.Size = new System.Drawing.Size(481, 54);
+            this.colorBlackToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.colorBlackToolStripMenuItem.Text = "黑色(&B)";
             this.colorBlackToolStripMenuItem.Click += new System.EventHandler(this.colorBlackToolStripMenuItem_Click);
             // 
             // colorWhiteToolStripMenuItem
             // 
             this.colorWhiteToolStripMenuItem.Name = "colorWhiteToolStripMenuItem";
-            this.colorWhiteToolStripMenuItem.Size = new System.Drawing.Size(481, 54);
+            this.colorWhiteToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.colorWhiteToolStripMenuItem.Text = "白色(&W)";
             this.colorWhiteToolStripMenuItem.Click += new System.EventHandler(this.colorWhiteToolStripMenuItem_Click);
             // 
             // colorCustomToolStripMenuItem
             // 
             this.colorCustomToolStripMenuItem.Name = "colorCustomToolStripMenuItem";
-            this.colorCustomToolStripMenuItem.Size = new System.Drawing.Size(481, 54);
+            this.colorCustomToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.colorCustomToolStripMenuItem.Text = "自定义({0},{1},{2})(&C)...";
             this.colorCustomToolStripMenuItem.Click += new System.EventHandler(this.colorCustomToolStripMenuItem_Click);
             // 
             // topmostToolStripMenuItem
             // 
             this.topmostToolStripMenuItem.Name = "topmostToolStripMenuItem";
-            this.topmostToolStripMenuItem.Size = new System.Drawing.Size(439, 48);
+            this.topmostToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.topmostToolStripMenuItem.Text = "置顶显示(&T)";
             this.topmostToolStripMenuItem.Click += new System.EventHandler(this.topmostToolStripMenuItem_Click);
             // 
@@ -170,10 +172,9 @@
             this.buttonToPrevious.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonToPrevious.FlatAppearance.BorderSize = 0;
             this.buttonToPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonToPrevious.Location = new System.Drawing.Point(30, 198);
-            this.buttonToPrevious.Margin = new System.Windows.Forms.Padding(8);
+            this.buttonToPrevious.Location = new System.Drawing.Point(12, 79);
             this.buttonToPrevious.Name = "buttonToPrevious";
-            this.buttonToPrevious.Size = new System.Drawing.Size(38, 40);
+            this.buttonToPrevious.Size = new System.Drawing.Size(21, 22);
             this.buttonToPrevious.TabIndex = 1;
             this.buttonToPrevious.Text = "&<";
             this.toolTipToPrevious.SetToolTip(this.buttonToPrevious, "上一个");
@@ -187,10 +188,9 @@
             this.buttonToNext.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonToNext.FlatAppearance.BorderSize = 0;
             this.buttonToNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonToNext.Location = new System.Drawing.Point(732, 198);
-            this.buttonToNext.Margin = new System.Windows.Forms.Padding(8);
+            this.buttonToNext.Location = new System.Drawing.Point(287, 79);
             this.buttonToNext.Name = "buttonToNext";
-            this.buttonToNext.Size = new System.Drawing.Size(38, 40);
+            this.buttonToNext.Size = new System.Drawing.Size(21, 22);
             this.buttonToNext.TabIndex = 2;
             this.buttonToNext.Text = "&>";
             this.toolTipToNext.SetToolTip(this.buttonToNext, "下一个");
@@ -208,17 +208,26 @@
             this.openFileDialogImagePath.Filter = "图像文件|*.bmp;*.dib;*.jp*;*.jfif;*.gif;*.tif*;*.png|所有文件|*";
             this.openFileDialogImagePath.RestoreDirectory = true;
             // 
+            // useSystemSortToolStripMenuItem
+            // 
+            this.useSystemSortToolStripMenuItem.Checked = true;
+            this.useSystemSortToolStripMenuItem.CheckOnClick = true;
+            this.useSystemSortToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.useSystemSortToolStripMenuItem.Name = "useSystemSortToolStripMenuItem";
+            this.useSystemSortToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.useSystemSortToolStripMenuItem.Text = "使用系统排序(&S)";
+            // 
             // FormPicView
             // 
             this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(320, 180);
             this.Controls.Add(this.buttonToPrevious);
             this.Controls.Add(this.buttonToNext);
             this.Controls.Add(this.pictureBoxMain);
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "FormPicView";
             this.Text = "请选择图片";
             this.TopMost = true;
@@ -254,6 +263,7 @@
         private System.Windows.Forms.ToolStripMenuItem colorCustomToolStripMenuItem;
         private System.Windows.Forms.ColorDialog colorDialogBackground;
         private System.Windows.Forms.ToolStripMenuItem openInExplorerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem useSystemSortToolStripMenuItem;
     }
 }
 
